@@ -1,0 +1,2 @@
+warning: /mnt/nyra_dev/rvn-oss/rvn-tools/Cargo.toml: unused manifest key: workspace.package.name
+   Compiling rvn-convert v0.1.1 (/mnt/nyra_dev/rvn-oss/rvn-tools/tools/rvn-convert)

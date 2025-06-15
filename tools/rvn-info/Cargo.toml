@@ -1,0 +1,21 @@
+[package]
+name = "rvn-info"
+version.workspace = true
+edition.workspace = true
+description.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+keywords.workspace = true
+categories.workspace = true
+authors.workspace = true
+
+[dependencies]
+rvn-core-info = { path = "../../crates/rvn-core-info" }
+rvn-core-parser = { path = "../../parsers/rvn-core-parser" }
+rvn-globals = { path = "../../crates/rvn-globals" }
+clap = { workspace = true }
+anyhow = { workspace = true }
+env_logger = { workspace = true } 
+log = { workspace = true }
+tokio = { workspace = true }

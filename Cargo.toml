@@ -1,0 +1,69 @@
+
+# Cargo.toml (workspace root)
+[workspace]
+members = [ 
+    "crates/rvn-core-convert", 
+    "crates/rvn-core-diff", 
+    "crates/rvn-core-info", 
+    "crates/rvn-core-inspect", "crates/rvn-core-kernel", 
+    "parsers/rvn-core-parser", 
+    "crates/rvn-core-quant",  
+    "crates/rvn-globals", "parsers/rvn-parser-gguf",
+    "tools/rvn-convert", 
+    "tools/rvn-diff",  
+    "tools/rvn-info", 
+    "tools/rvn-inspect", 
+    "tools/rvn-quant", "parsers/rvn-parser-safetensors", "parsers/rvn-parser-pytorch", "parsers/rvn-parser-onnx", "crates/rvn-core-tensor",
+]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.1"
+edition = "2024"
+description = "LLM tooling in rust"
+license = "MIT"
+homepage = "https://www.rvnllm.com/"
+repository = "https://github.com/rvnllm/rvn-tools"
+keywords = ["llm", "gguf", "safetensors", "converter"]
+categories = ["command-line-utilities", "science"]
+authors = ["Ervin Bosenbacher <ervin.bosenbacher@rvnllm.com>"]
+
+[workspace.dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.140"
+rayon = "1.10.0"
+memmap2 = "0.9.5"
+anyhow = { version = "1.0.98", features = ["std"] }  
+tokio = { version = "1.44.2", features = ["full"] }
+log = "0.4.27"
+env_logger = "0.11.8"
+clap = { version = "4.5.37", features = ["derive"] }
+once_cell = "1.21.3"
+bytemuck = "1.21.3"
+byteorder = "1.5"
+libc = "0.2.172"
+tracing-subscriber = "0.3.18"
+thiserror = "2.0.12"
+smallvec = "1.15.0"
+ctor = "0.4.2"
+tempfile = "3.20"
+
+[profile.mindebug-dev]
+inherits = "dev"
+
+[profile.release]
+lto = "thin"
+
+[profile.nodebug-release]
+inherits = "release"
+debug = false
+
+[profile.debug-release]
+inherits = "release"
+debug = true
+
+[profile.dist-release]
+inherits = "release"
+codegen-units = 1
+debug = false
+lto = "fat"

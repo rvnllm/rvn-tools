@@ -1,0 +1,17 @@
+[package]
+name = "rvn-core-info"
+version.workspace = true
+edition.workspace = true
+description.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+keywords.workspace = true
+categories.workspace = true
+authors.workspace = true
+
+[dependencies]
+rvn-core-parser = { path = "../../parsers/rvn-core-parser" }
+rvn-core-tensor = { path = "../rvn-core-tensor" }
+log = { workspace = true }
+

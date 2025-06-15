@@ -1,0 +1,38 @@
+name: rvn-convert CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+      
+    - name: Debug test environment
+      run: |
+        rustc --version
+        cargo --version
+        cargo test --all-targets --all-features --no-run -v
+
+    - name: Run CI checks
+      run: make ci
+      
+    - name: Test binaries exist and run
+      run: |
+        ls -la target/debug/rvn-convert
+        ./target/debug/rvn-convert --help
+
+

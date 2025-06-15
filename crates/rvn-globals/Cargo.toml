@@ -1,0 +1,17 @@
+[package]
+name                    = "rvn-globals"
+version.workspace       = true
+edition.workspace       = true
+description.workspace   = true
+license.workspace       = true
+homepage.workspace      = true
+repository.workspace    = true
+keywords.workspace      = true
+categories.workspace    = true
+authors.workspace       = true
+
+[dependencies]
+clap        = { workspace = true }
+rayon       = { workspace = true }
+env_logger  = { workspace = true }
+once_cell   = { workspace = true }
