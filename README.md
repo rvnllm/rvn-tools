@@ -5,6 +5,9 @@
 
 # rvnllm
 
+# !! THE REPO IS INCOMPLETE !!
+## I am working on it to put it back into a working state, will keep the readme upto date
+
 **High-Performance Tooling for LLM Inspection, Validation, and Format Conversion**
 
 `rvnllm` is a Rust-based toolkit for analyzing, validating, and converting large language models.  
@@ -28,7 +31,6 @@ CLI Tools
 | Tool         | Description                             | Docs |
 |--------------|-----------------------------------------|------|
 | [`rvn-info`](tools/rvn-info/README.md)     | Display GGUF/SafeTensors metadata and tensor layout | [docs](tools/rvn-info) |
-| [`rvn-convert`](tools/rvn-convert/README.md) | Convert between model formats (GGUF, SafeTensors) | [docs](tools/rvn-convert) |
 | [`rvn-diff`](tools/rvn-diff/README.md)     | Compare models at the tensor level | [docs](tools/rvn-diff) |
 | [`rvn-inspect`](tools/rvn-inspect/README.md) | Perform structural and diagnostic checks | [docs](tools/rvn-inspect) |
 | [`rvn-prompt`](tools/rvn-prompt/README.md) | Analyze model behavior in response to a prompt | [docs](tools/rvn-prompt) |
@@ -59,17 +61,12 @@ Note: This library **does not support inference or sampling.**
 | Format      | Load    | Inspect | Convert | Status  |
 | ----------- | ------- | ------- | ------- | ------- |
 | GGUF        | Completed | Planned | Test  | Beta  |
-| SafeTensors | Planned | Planned | Planned | Not yet    |
-| PyTorch     | Planned | Planned | Planned | Not yet |
-| ONNX        | Planned | Planned | Planned | Not yet |
-
 
 ## Design Goals
 
 - Minimal to zero runtime overhead
 - Designed for validation, analysis, and debugging workflows
 - Execution/runtime tracing lives in separate layers (non-OSS)
-- Modular parser system supports future formats and backends
 - Shared core for both CLI and Python interface
 
 ## Why Use rvnllm?
